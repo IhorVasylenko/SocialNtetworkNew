@@ -1,0 +1,137 @@
+.header {
+    background-color: #FFFFFF;
+    position: relative;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 2fr 3fr 7fr 2fr;
+    align-items: center;
+    max-width: 1050px;
+    padding-right: -10px;
+    padding-left: -10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.header .logoLink img {
+    height: 60px;
+}
+
+
+.header .submenuWrapper {
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.header .submenuWrapper .link {
+    text-decoration: none;
+    outline: none;
+    color: rgba(33, 33, 33, .9);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: "Fira Code", sans-serif;
+}
+.header .submenuWrapper .link:hover {
+    opacity: .7;
+}
+
+
+.header .loginBlock {
+    justify-self: start;
+    padding: 3px 5px 3px 5px;
+    display: flex;
+    height: 24px;
+    background-color: rgba(179, 229, 252, .3);
+    border-radius: 10px;
+    cursor: default;
+}
+.header .loginBlock:hover {
+    cursor: pointer;
+}
+
+
+.loginBlock:hover .logInLOgOutContainer {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(.85);
+}
+
+
+.logInLOgOutContainer {
+    position: absolute;
+    top: 70%;
+    width: 120px;
+    background: #ffffff;
+    border: 2px solid rgba(179, 229, 252, .7);
+    border-radius: 20px;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(.4);
+    transition: .4s ease-in-out;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+.logInLOgOutContainer li {
+    padding: 10px 0;
+    margin: -1px 10px;
+    border-bottom: 1px solid rgba(179, 229, 252, 1);
+    text-decoration: none;
+    outline: none;
+    display: block;
+    font-size: 16px;
+    color: rgba(3, 169, 244, 1);
+    font-family: "Fira Code", sans-serif;
+    transition: color 0s;
+}
+.logInLOgOutContainer li:hover {
+    color: rgba(3, 169, 244, 1);
+    font-weight: bold;
+    transition: color 0s;
+}
+
+
+.header .loginBlock .name {
+    color: rgba(2, 136, 209, 1);
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+
+.header .loginBlock img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*.header::after {
+    content: "";
+    background: linear-gradient(to right, #B3E5FC 0%,#0288D1 50%,#B3E5FC 100%);
+    height: 5px;
+    width: 100%;
+    position: absolute;
+}*/
+
+
+

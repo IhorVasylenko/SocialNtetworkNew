@@ -1,0 +1,25 @@
+.formControl {
+    min-width: 150px;
+    height: 22px;
+    font-size: 16px;
+    font-style: italic;
+    background-color: rgba(3, 169, 244, .3);
+    color: rgba(179, 229, 252, .7);
+    border: none;
+    border-radius: 11px;
+    padding-left: 15px;
+    outline: none;
+}
+.formControl:hover {
+    background-color: rgba(3, 169, 244, .5);
+}
+.formControl:focus {
+    background-color: rgba(3, 169, 244, .5);
+}
+
+input::placeholder {
+    color: rgba(2, 136, 209, 1);
+}
+
+
+

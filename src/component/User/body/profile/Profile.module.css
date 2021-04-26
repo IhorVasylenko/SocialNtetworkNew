@@ -1,0 +1,246 @@
+.container {
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    width: 1050px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container .control {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    border: 1px solid rgba(158, 158, 158, .5);
+}
+
+.container .content {
+    margin: 50px;
+    margin-top: 80px;
+
+    background-color: #ffffff;
+    border-radius: 20px;
+
+    border: 1px solid rgba(158, 158, 158, .5);
+}
+
+
+.wrapper {
+    position: relative;
+    height: 497px;
+}
+
+
+
+.wrapper .backgroundImage {
+    position: relative;
+    display: grid;
+    grid-template-rows: 297px 200px;
+
+    height: 297px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px 20px 0px 0px;
+
+}
+
+.wrapper .backgroundImage .profileMenu {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgba(255,255,255,0.7);
+    background-blend-mode: lighten;
+    height: 50px;
+    margin-top: 220px;
+    padding-right: 5px;
+}
+
+.wrapper .backgroundImage .profileMenu .avatarContainer {
+    position: relative;
+    margin-top: -10px;
+    margin-left: 20px;
+}
+
+.wrapper .backgroundImage .profileMenu .avatarContainer img {
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    background-color: #ffffff;
+}
+
+.wrapper .backgroundImage .profileMenu a {
+    color: #757575;
+    text-decoration: none;
+    padding: 5px 5px;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: "Fira Code", sans-serif;
+}
+
+.wrapper .backgroundImage .profileMenu a:hover {
+    color: #cfd8dc;
+}
+
+.wrapper .backgroundImage .profileMenu button {
+    width: 100px;
+    height: 21px;
+    outline: none;
+    border-radius: 7px;
+    border: none;
+
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: rgba(3, 169, 244, 1);
+    font-size: 14px;
+
+    font-family: "Fira Code", sans-serif;;
+}
+
+.wrapper .backgroundImage .profileMenu button:active {
+    font-weight: bold;
+}
+
+
+.wrapper .backgroundImage .footer {
+    display: grid;
+    grid-template-columns: 201px 1fr;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.wrapper .backgroundImage .footer .preferencesDate {
+    background-color: #ffffff;
+    border-radius: 0px 0px 0px 20px;
+
+    display: grid;
+    grid-template-rows: 70px 1fr;
+}
+
+.wrapper .backgroundImage .footer .preferencesDate .followerDate {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 18px;
+
+}
+
+.wrapper .backgroundImage .footer .preferencesDate .followerDate .followerItem  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-transform: uppercase;
+    color: rgba(179, 229, 252, 1);
+    font-size: 12px;
+    font-weight: bold;
+
+    font-family: "Fira Code", sans-serif;;
+}
+
+.wrapper .backgroundImage .footer .preferencesDate .followerDate .followerItem .value {
+    color: rgba(3, 169, 244, 1);
+    font-size: 16px;
+}
+
+.wrapper .backgroundImage .footer .preferencesDate .socialsDate {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 126px;
+    overflow-y: scroll;
+    border-radius: 0px 0px 0px 20px;
+}
+
+.socialsDate::-webkit-scrollbar {
+    width: 8px;
+}
+.socialsDate::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(179, 229, 252, 1);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.socialsDate::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #bdbdbd;
+    -webkit-box-shadow: inset 0 0 6px rgba(3, 169, 244, .7);
+}
+.socialsDate::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(179, 229, 252, 1);
+}
+
+
+
+
+.wrapper .backgroundImage .footer .preferencesDate .socialsDate a {
+    text-decoration: none;
+    border-top: 1px solid #757575;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+}
+
+.wrapper .backgroundImage .footer .preferencesDate .socialsDate a img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.wrapper .backgroundImage .footer .preferencesDate .socialsDate a p {
+    color: rgba(117, 117, 117, .5);
+    font-size: 12px;
+    font-weight: bold;
+
+    font-family: "Fira Code", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper .backgroundImage .footer .profileDate {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30% 70%;
+    grid-template-areas: 'n c' 's s';
+    padding: 5px;
+    justify-items: center;
+}
+
+.wrapper .backgroundImage .footer .profileDate span {
+    font-family: "Fira Code", sans-serif;
+}
+
+.wrapper .backgroundImage .footer .profileDate .profileName {
+    grid-area: n;
+    color: rgba(33, 33, 33, 1);
+    font-weight: bold;
+    font-size: 16px;
+    align-self: center;
+    text-transform: uppercase;
+}
+
+.wrapper .backgroundImage .footer .profileDate .country {
+    grid-area: c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(117, 117, 117, 1);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.wrapper .backgroundImage .footer .profileDate .status {
+    grid-area: s;
+    color: rgba(117, 117, 117, 1);
+    align-self: center;
+    font-style: italic;
+}
+
+

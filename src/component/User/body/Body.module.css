@@ -1,0 +1,11 @@
+.container {
+    background-color: rgba(179, 229, 252, 0.2);
+}
+
+.container::before {
+    content: "";
+    background: linear-gradient(to right, rgba(179, 229, 252, .1) 0%, #0288D1 50%, rgba(179, 229, 252, .1) 100%);
+    height: 5px;
+    width: 100%;
+    position: absolute;
+}

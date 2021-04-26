@@ -1,0 +1,99 @@
+.menuName {
+    color: rgba(33, 33, 33, .9);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: "Fira Code", sans-serif;
+    cursor: default;
+}
+.menuName:hover {
+    opacity: .7;
+}
+
+
+.menuWrapper {
+    text-align: center;
+    padding: 10px 0;
+    display: inline-block;
+    position: relative;
+}
+.menuWrapper:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    height: 12px;
+    background: #d2d2d2;
+    top: 16px;
+    box-shadow: 4px -2px 0 #d2d2d2;
+    transform: rotate(30deg);
+}
+.menuWrapper:last-child:after {
+    background: none;
+    box-shadow: none;
+}
+
+
+.menuWrapper > a {
+    text-decoration: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    display: inline-flex;
+    padding: 12px 20px;
+    color: #212121;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: "Fira Code", sans-serif;
+}
+.menuWrapper a:hover {
+    color: #757575;
+}
+
+
+.menuWrapper:hover .subMenu {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(.85);
+}
+
+
+.subMenu {
+    position: absolute;
+    left: -10%;
+    top: 130%;
+    width: 190px;
+    background: linear-gradient(to right, rgba(179, 229, 252, 0.1) 0%, rgba(179, 229, 252, .5) 50%, rgba(179, 229, 252, 0.1) 100%);
+    border: 2px solid rgba(179, 229, 252, .7);
+    border-radius: 10px;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(.4);
+    transition: .4s ease-in-out;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.subMenu li {
+    padding: 10px 0;
+    margin: -1px 10px;
+    border-bottom: 1px solid rgba(179, 229, 252, 1);
+}
+.subMenu li a {
+    text-decoration: none;
+    outline: none;
+    display: block;
+
+    font-size: 16px;
+    color: #757575;
+    font-family: "Fira Code", sans-serif;
+    transition: color 0s;
+}
+.subMenu li a:hover {
+    color: #212121;
+    font-weight: bold;
+    transition: color 0s;
+}
+

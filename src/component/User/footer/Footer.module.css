@@ -1,0 +1,90 @@
+.footer {
+    position: relative;
+    background-color: rgba(255, 255, 255, 1);
+    height: 200px;
+}
+
+.footer::before {
+    content: "";
+    background: linear-gradient(to right, #B3E5FC 0%,#0288D1 50%,#B3E5FC 100%);
+    height: 5px;
+    width: 100%;
+    position: absolute;
+}
+
+.footer .wrapper {
+    display: grid;
+    grid-template-columns: 23% 18% 18% 18% 23%;
+    justify-items: center;
+    align-items: start;
+    padding-bottom: 10px;
+    max-width: 1050px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer .wrapper .logo {
+    max-height: 50px;
+    margin-top: 8px;
+    margin-left: -4px;
+}
+
+.footer .wrapper .icons img {
+    width: 20px;
+    margin-right: 15px;
+}
+
+.footer .wrapper p {
+    color: #212121;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.footer .wrapper li::marker {
+    color: #212121;
+}
+
+.footer .wrapper li a {
+    text-decoration: none;
+    color: #757575;
+}
+
+.footer .wrapper li a:hover {
+    color: #212121;
+}
+
+.footer .wrapper .contacts {
+    font-size: 16px;
+    font-weight: bold;
+    color: #757575;
+}
+
+.footer .wrapper .contacts li {
+    border-bottom: 1px #212121 solid;
+    height: 2em;
+    margin-top: 10px;
+}
+
+.footer .wrapper .contacts li::marker {
+    color: transparent;
+}
+
+.footer .wrapper .contacts img {
+    width: 18px;
+    margin-right: 18px;
+}
+
+.footer .copyright {
+    position: relative;
+    height: 20px;
+
+    background: linear-gradient(to right, #B3E5FC 0%,#9E9E9E 50%,#B3E5FC 100%);
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 10px;
+}
