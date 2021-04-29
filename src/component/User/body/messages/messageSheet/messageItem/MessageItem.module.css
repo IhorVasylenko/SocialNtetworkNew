@@ -1,0 +1,116 @@
+/*стиль для моих сообщений, прижимаються в право, уголок с правой стороны, присутствует статус сообщения, другой цвет фона*/
+/*my*/
+.wrapperR {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 1);   /*1-1*/
+    padding: 8px 15px 8px 25px;
+    order: 999;
+    margin-left: auto;
+}
+.xR {
+    width: 25px;
+    height: 30px;
+    background: rgba(179, 229, 252, .6);
+    position: relative;
+    overflow: hidden;
+    align-self: flex-end;
+    border-bottom: 1px solid rgba(179, 229, 252, 1);
+}
+.xR:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 1);                             /*1-1*/
+    border-radius: 50%;
+}
+.containerLAstMessageR {
+    background-color: rgba(179, 229, 252, .6);
+    width: auto;
+    border-radius: 10px 10px 0 10px;
+    padding: 5px;
+    border-bottom: 1px solid rgba(179, 229, 252, 1);
+    border-left: 1px solid rgba(179, 229, 252, 1);
+}
+.containerPreviousMessageR {
+    background-color: rgba(179, 229, 252, .6);
+    width: auto ;
+    border-radius: 10px;
+    padding: 5px;
+    border-bottom: 1px solid rgba(179, 229, 252, 1);
+    border-left: 1px solid rgba(179, 229, 252, 1);
+    margin-right: 25px;
+}
+.messageDate img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+
+/*companion*/
+.wrapperL {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 1);   /*1-1*/
+    padding: 8px 15px 8px 25px;
+    margin: 0 10px;
+}
+.xL {
+    width: 25px;
+    height: 30px;
+    background: rgba(179, 229, 252, .1);
+    position: relative;
+    overflow: hidden;
+    align-self: flex-end;
+    margin-left: -25px;
+    border-bottom: 1px solid rgba(179, 229, 252, .7);
+}
+.xL:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 1);                             /*1-1*/
+    border-radius: 50%;
+    margin-left: -25px;
+}
+.containerLAstMessageL {
+    background-color: rgba(179, 229, 252, .1);
+    width: auto;
+    border-radius: 10px 10px 10px 0 ;
+    padding: 5px;
+    border-bottom: 1px solid rgba(179, 229, 252, .7);
+    border-right: 1px solid rgba(179, 229, 252, .7);
+    margin-right: 15px;
+}
+.containerPreviousMessageL {
+    background-color: rgba(179, 229, 252, .1);
+    width: auto ;
+    border-radius: 10px;
+    padding: 5px;
+    border-bottom: 1px solid rgba(179, 229, 252, .7);
+    border-right: 1px solid rgba(179, 229, 252, .7);
+    margin-right: 15px;
+}
+
+/*all*/
+.container {
+    display: flex;
+    flex-flow: column;
+}
+.messageDate {
+    float: right;
+    color: rgba(117, 117, 117, .5);
+    margin-left: 10px;
+    margin-right: 5px;
+    padding-top: 5px;
+}
+
+
+

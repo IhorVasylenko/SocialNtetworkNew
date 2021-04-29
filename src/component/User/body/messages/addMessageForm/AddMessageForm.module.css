@@ -1,0 +1,67 @@
+.container {
+    padding: 10px 20px;
+    height: 40px;
+    border-top: 1px solid rgba(158, 158, 158, .5);
+
+    display: grid;
+    grid-template-columns: 50px 1fr 60px 50px;
+}
+
+.attach {
+    border: none;
+    background: none;
+    margin-right: 10px;
+    opacity: .5;
+}
+.attach:hover {
+    opacity: .8;
+}
+.attach img {
+    width: 40px;
+    height: 40px;
+}
+
+.inputField {
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 18px;
+    align-self: center;
+}
+.inputField::placeholder {
+    color: rgba(158, 158, 158, .7);
+    font-style: italic;
+    font-size: 18px;
+    transform: translateY(5px);
+}
+.inputField::-webkit-scrollbar {
+    display: none;
+}
+
+.emoji {
+    border: none;
+    background: none;
+    margin: 0 10px;
+    opacity: .5;
+}
+.emoji:hover {
+    opacity: .8;
+}
+.emoji img {
+    width: 40px;
+    height: 40px;
+}
+
+.soundOrVideo {
+    border: none;
+    background: none;
+    margin-left: 10px;
+    opacity: .5;
+}
+.soundOrVideo:hover {
+    opacity: .8;
+}
+.soundOrVideo img {
+    width: 40px;
+    height: 40px;
+}

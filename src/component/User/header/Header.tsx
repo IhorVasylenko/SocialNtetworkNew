@@ -12,7 +12,7 @@ function Header () {
             <NavLink className={style.logoLink} to=''>
                 <img src={logo} alt='logo'/>
             </NavLink>
-            <Search/>
+            <Search id={'header'} title={'Search in Go to IT'}/>
             <div className={style.submenuWrapper}>
                 <NavLink className={style.link} to={'./profile'}>
                     Profile
