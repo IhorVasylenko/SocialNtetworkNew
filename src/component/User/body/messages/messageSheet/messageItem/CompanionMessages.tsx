@@ -1,8 +1,8 @@
 import React from "react";
 import style from "./MessageItem.module.css";
-import {MessageItemPropsType} from "./MessageItem";
+import {MessagesPropsType} from "../../../../../redux/state";
 
-export const CompanionMessages = (props: MessageItemPropsType) => {
+export const CompanionMessages = (props: MessagesPropsType) => {
     return (
         <div className={style.wrapperL}>
             {(props.order === 'last') ? <div className={style.xL} /> : null} {/*определяем последее в очереди это сообщение или нет, и подключаем соответствующий класс*/}

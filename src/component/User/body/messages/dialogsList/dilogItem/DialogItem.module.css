@@ -33,15 +33,6 @@
     width: 248px;
     position: relative;
 }
-.online {
-    top: 0;
-    left: 0;
-    margin-right: 3px;
-}
-.online img {
-    width: 8px;
-    height: 8px;
-}
 .dialogAuthorName {
     font-family: "Fira Code", sans-serif;
     padding-left: 3px;

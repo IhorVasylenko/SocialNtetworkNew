@@ -1,18 +1,9 @@
 import React, {useState} from 'react';
 import style from './HamburgerMenu.module.css'
 import {NavLink} from "react-router-dom";
+import {HamburgerMenuPropsType} from "../../redux/state";
 
-export type MenuPositionType = {
-    id: string
-    title: string
-    active?: boolean
-    path: string
-}
 
-export type HamburgerMenuPropsType = {
-    id: string
-    menuPositions: Array<MenuPositionType>
-}
 
 function HamburgerMenu (props: HamburgerMenuPropsType) {
     let [classStyles, setClassStyles] = useState('')

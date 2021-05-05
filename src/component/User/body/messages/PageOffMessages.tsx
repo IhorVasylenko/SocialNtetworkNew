@@ -3,19 +3,20 @@ import style from './PageOffMessages.module.css'
 import MessageSheet from "./messageSheet/MessageSheet";
 import DialogsList from "./dialogsList/DialogsList";
 import {AddMessageForm} from "./addMessageForm/AddMessageForm";
+import {RootStateType} from "../../../redux/state";
 
-function PageOffMessages () {
+function PageOffMessages (props: {state: RootStateType}) {
     return (
         <div className={style.container}>
             <div className={style.control}>
                 control
             </div>
             <div className={style.content}>
-                <MessageSheet />
+                <MessageSheet messagesData={props.state.messagesData}/>
                 <AddMessageForm />
             </div>
             <div className={style.extra}>
-                <DialogsList />
+                <DialogsList positionsData={props.state.positionsData} dialogsData={props.state.dialogsData}/>
             </div>
         </div>
     )

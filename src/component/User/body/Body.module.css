@@ -1,5 +1,6 @@
 .container {
-    background-color: rgba(179, 229, 252, 0.1);
+    /*background-color: rgba(179, 229, 252, 0.1);*/
+    background-color: rgba(158, 158, 158, .1);
 }
 
 .container::before {
