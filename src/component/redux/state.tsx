@@ -1,5 +1,6 @@
 import React from "react";
 import {v1} from "uuid";
+import {renderTree} from "../../render";
 
 export const myId = '116355' // необходим для реализации логики, в дальнейшем получу с сервера
 export const newDate = `${new Date().getHours()}:${new Date().getMinutes()}` //временная заглушка для отображения даты
@@ -111,6 +112,21 @@ const myState: RootStateType = {
             lastMessageText: 'It is a dark time for the Rebellion. ',
             unViewedMessageCounter: 115, timePassed: 25, authorAvatar: null}
     ]
+}
+
+export const addNewMessage = (text: string) => {
+    const newMessage: MessagesPropsType = {
+        id: v1(),
+        authorId: '116355',
+        dateOffMessage: newDate,     //должно фиксироваться время отправки сообщения
+        lastMessageText: text,
+        statusOffMessage: "lookedOver",
+        order: 'last',
+        myId: myId
+    }
+    myState.messagesData.push(newMessage)
+    renderTree(myState)
+    myState.messagesData[myState.messagesData.length-2].order = '' // костыль, убирает хвостик у предпоследнего сообщения
 }
 
 export default myState

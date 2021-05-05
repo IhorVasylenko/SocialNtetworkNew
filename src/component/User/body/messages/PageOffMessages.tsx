@@ -5,7 +5,12 @@ import DialogsList from "./dialogsList/DialogsList";
 import {AddMessageForm} from "./addMessageForm/AddMessageForm";
 import {RootStateType} from "../../../redux/state";
 
-function PageOffMessages (props: {state: RootStateType}) {
+type PageOffMessagesPropsType = {
+    state: RootStateType
+    addNewMessage: (text: string) => void
+}
+
+function PageOffMessages (props: PageOffMessagesPropsType) {
     return (
         <div className={style.container}>
             <div className={style.control}>
@@ -13,7 +18,7 @@ function PageOffMessages (props: {state: RootStateType}) {
             </div>
             <div className={style.content}>
                 <MessageSheet messagesData={props.state.messagesData}/>
-                <AddMessageForm />
+                <AddMessageForm addNewMessage={props.addNewMessage}/>
             </div>
             <div className={style.extra}>
                 <DialogsList positionsData={props.state.positionsData} dialogsData={props.state.dialogsData}/>

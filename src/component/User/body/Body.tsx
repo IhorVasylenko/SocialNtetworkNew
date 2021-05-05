@@ -11,14 +11,19 @@ import MyFriends from "./friends/myFriends/MyFriends";
 import AddFriends from "./friends/addFriends/AddFriends";
 import {RootStateType} from "../../redux/state";
 
-function Body (props: {state: RootStateType}) {
+type BodyPropsType = {
+    state: RootStateType
+    addNewMessage: (text: string) => void
+}
+
+function Body (props: BodyPropsType) {
     return (
         <div className={style.container}>
             <Route path='/profile' render={ () => <Profile /> } />
             <Route path='/settings' render={ () => <Settings /> } />
             <Route path='/posts' render={ () => <Posts /> } />
             <Route path='/music' render={ () => <Music /> } />
-            <Route path='/messages' render={ () => <PageOffMessages state={props.state}/> } />
+            <Route path='/messages' render={ () => <PageOffMessages state={props.state} addNewMessage={props.addNewMessage}/> } />
             <Route path='/images' render={ () => <Images /> } />
             <Route path='/myFriends' render={ () => <MyFriends /> } />
             <Route path='/addFriends' render={ () => <AddFriends /> } />

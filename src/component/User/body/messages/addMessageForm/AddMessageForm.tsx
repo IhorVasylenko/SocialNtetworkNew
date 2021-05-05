@@ -1,53 +1,28 @@
 import style from "./AddMessageForm.module.css";
-import React, {ChangeEvent, useState} from "react";
+import React, {ChangeEvent, useEffect, useState} from "react";
 import attachmentIcon from '../../../../common/image/defoultIcons/attachmentIcon.png'
 import emojiIcon from '../../../../common/image/defoultIcons/emojiIcon.png'
+import sendMessageIcon from '../../../../common/image/defoultIcons/sendMessageIcon.png'
 import recordIcon from '../../../../common/image/defoultIcons/recordIcon.png'
 
-export function AddMessageForm() {
+type AddMessageForm = {
+    addNewMessage: (text: string) => void
+}
 
-    const ButtonRecordMessage = () => {
-        return (
-            <button className={style.soundOrVideo} >
-                <img src={recordIcon} alt="recordIcon"/>
-            </button>
-        )
-    }
-    const ButtonSendMessage = () => {
-        return (
-            <button className={style.soundOrVideo} >
-                <img src={emojiIcon} alt="recordIcon"/>
-            </button>
-        )
-    }
-    const [button, setButton] = useState(ButtonRecordMessage)
-    const changeOnButtonSendMessage = () => {
-        setButton(ButtonSendMessage)
-    }
-    const changeOnButtonRecordMessage = () => {
-        setButton(ButtonRecordMessage)
-    }
-
-
-
+export function AddMessageForm(props: AddMessageForm) {
     const [value,setValue] = useState('')
+    const [buttonState, setButtonState] = useState(sendMessageIcon) //стейт на кноку, с изначальной jsx разметкой
+
     const changeValue = (e: ChangeEvent<HTMLInputElement>) => {
         setValue(e.currentTarget.value)
-        console.log(value)
-        if(value !== '') {
-            changeOnButtonSendMessage()
-        }
-        if(value === '') {
-            changeOnButtonRecordMessage()
-        }
-
     }
 
+    useEffect(() => (value.trim() !== '') ? setButtonState(sendMessageIcon) : setButtonState(recordIcon)
+    )
 
-    const newMessageElement = React.createRef()
-    const addMessage = () => {
-        let newText = newMessageElement.current.value
-        console.log(newText)
+    const addMessage = () => {   // контейнер над функцией добавления сообщений
+        props.addNewMessage(value)
+        setValue('')
     }
 
     return (
@@ -56,17 +31,16 @@ export function AddMessageForm() {
                 <img src={attachmentIcon} alt="attachmentIcon"/>
             </button>
             <textarea
-                /*onInput={changeOnButtonSendMessage}
-                onBlur={changeOnButtonRecordMessage}*/
                 onChange={changeValue}
-                ref={newMessageElement}
                 className={style.inputField} placeholder={' Write a message...'}
                 value={value}
             />
             <button className={style.emoji} >
                 <img src={emojiIcon} alt="emojiIcon"/>
             </button>
-            {button}
+            <button className={style.soundOrVideo} >
+                <img onClick={addMessage} src={buttonState} alt="recordIcon"/>
+            </button>
         </div>
     )
 }

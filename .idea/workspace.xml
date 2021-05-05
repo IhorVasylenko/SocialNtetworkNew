@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1521610f-b017-4a55-97e4-655a8f96a61f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/component/common/image/defoultIcons/sendMessageIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/render.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/body/Body.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/Body.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/body/messages/PageOffMessages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/messages/PageOffMessages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/body/messages/addMessageForm/AddMessageForm.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/messages/addMessageForm/AddMessageForm.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/body/messages/addMessageForm/AddMessageForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/messages/addMessageForm/AddMessageForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/body/messages/dialogsList/DialogsList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/messages/dialogsList/DialogsList.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/body/messages/messageSheet/MessageSheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/messages/messageSheet/MessageSheet.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/body/messages/messageSheet/messageItem/MessageItem.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/messages/messageSheet/messageItem/MessageItem.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/body/messages/messageSheet/messageItem/MessageItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/messages/messageSheet/messageItem/MessageItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/redux/state.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/redux/state.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1qhwvU4UYAe3CekizRAaSYezUPs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="yarn:package.json:typescript" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\React\incubator\SocialNetwork\social-netwotk-app\src\component\HOC\onlineStatus" />
+      <recent name="D:\React\incubator\SocialNetwork\social-netwotk-app\src\component\redux" />
+      <recent name="D:\React\incubator\SocialNetwork\social-netwotk-app\src\component\common" />
+      <recent name="D:\React\incubator\SocialNetwork\social-netwotk-app\src\component\common\hamburgerMenu" />
+      <recent name="D:\React\incubator\SocialNetwork\social-netwotk-app\src\component\User\body\messages\messageSheet\messageItem" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\React\incubator\SocialNetwork\social-netwotk-app\src\component\HOC" />
+      <recent name="D:\React\incubator\SocialNetwork\social-netwotk-app\src\component\HOC\displayMessageStatus" />
+      <recent name="D:\React\incubator\SocialNetwork\social-netwotk-app\src\component\common" />
+      <recent name="D:\React\incubator\SocialNetwork\social-netwotk-app\src\component\common\image" />
+      <recent name="D:\React\incubator\SocialNetwork\social-netwotk-app\src\component\User" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="D:\React\incubator\SocialNetwork\social-netwotk-app\src\render.tsx" />
+      <recent name="D:\React\incubator\SocialNetwork\social-netwotk-app\src\component\common\onlineStatus\OnlineStatus.tsx" />
+      <recent name="D:\React\incubator\SocialNetwork\social-netwotk-app\src\component\HOC\DisplayMessageStatus.tsx" />
+      <recent name="D:\React\incubator\SocialNetwork\social-netwotk-app\src\component\User\body\messages\addMessageForm\AddMessageForm.tsx" />
+      <recent name="D:\React\incubator\SocialNetwork\social-netwotk-app\src\component\User\body\messages\messageSheet\messageItem\CompanionMessages.tsx" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1521610f-b017-4a55-97e4-655a8f96a61f" name="Default Changelist" comment="" />
+      <created>1617545403118</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617545403118</updated>
+      <workItem from="1617545417402" duration="4514000" />
+      <workItem from="1618058980885" duration="13239000" />
+      <workItem from="1618152008381" duration="9179000" />
+      <workItem from="1618246934451" duration="429000" />
+      <workItem from="1618251268515" duration="1162000" />
+      <workItem from="1618649830031" duration="18582000" />
+      <workItem from="1618674547914" duration="13717000" />
+      <workItem from="1618757097150" duration="24000" />
+      <workItem from="1619416617470" duration="22526000" />
+      <workItem from="1619506206766" duration="492000" />
+      <workItem from="1619507148668" duration="19722000" />
+      <workItem from="1619547942581" duration="54377000" />
+      <workItem from="1619776796720" duration="423000" />
+      <workItem from="1619777378685" duration="12728000" />
+      <workItem from="1619867498185" duration="18427000" />
+      <workItem from="1620139100347" duration="126000" />
+      <workItem from="1620200990896" duration="23186000" />
+    </task>
+    <task id="LOCAL-00001" summary="26.04.21 creating a message page">
+      <created>1619447043673</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619447043673</updated>
+    </task>
+    <task id="LOCAL-00002" summary="28.04">
+      <created>1619686131748</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1619686131748</updated>
+    </task>
+    <task id="LOCAL-00003" summary="02.05.21">
+      <created>1620201069373</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1620201069373</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="26.04.21 creating a message page" />
+    <MESSAGE value="28.04" />
+    <MESSAGE value="02.05.21" />
+    <option name="LAST_COMMIT_MESSAGE" value="02.05.21" />
+  </component>
+</project>

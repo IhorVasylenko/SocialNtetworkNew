@@ -24,7 +24,6 @@ function MessageItem(props: MessagesPropsType) {
                 />
             }
         </div>
-
     )
 }
 

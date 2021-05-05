@@ -34,6 +34,8 @@
     padding: 5px;
     border-bottom: 1px solid rgba(179, 229, 252, 1);
     border-left: 1px solid rgba(179, 229, 252, 1);
+    overflow-wrap: break-word;                                     /*ограничивает увеличение ширины контейнера при длинном слове*/
+    max-width: 590px;                                              /*ограничивает увеличение ширины контейнера при длинном слове*/
 }
 .containerPreviousMessageR {
     background-color: rgba(179, 229, 252, .6);
@@ -43,6 +45,8 @@
     border-bottom: 1px solid rgba(179, 229, 252, 1);
     border-left: 1px solid rgba(179, 229, 252, 1);
     margin-right: 25px;
+    overflow-wrap: break-word;
+    max-width: 590px;
 }
 .messageDate img {
     width: 30px;

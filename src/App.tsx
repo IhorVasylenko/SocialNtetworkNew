@@ -5,13 +5,16 @@ import Body from "./component/User/body/Body";
 import Footer from "./component/User/footer/Footer";
 import {RootStateType} from "./component/redux/state";
 
-export const myId = '116355' // необходим для реализации логики, в дальнейшем получу с сервера
+type AppPropsType = {
+    state: RootStateType
+    addNewMessage: (text: string) => void
+}
 
-function App(props: {state: RootStateType }) {
+function App(props: AppPropsType) {
   return (
     <div className="App">
       <Header />
-      <Body state={props.state}/>
+      <Body state={props.state} addNewMessage={props.addNewMessage}/>
       <Footer />
     </div>
   );
