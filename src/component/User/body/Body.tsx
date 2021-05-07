@@ -9,11 +9,11 @@ import PageOffMessages from "./messages/PageOffMessages";
 import Images from "./images/Images";
 import MyFriends from "./friends/myFriends/MyFriends";
 import AddFriends from "./friends/addFriends/AddFriends";
-import {RootStateType} from "../../redux/state";
+import {ActionTypes, RootStateType} from "../../redux/state";
 
 type BodyPropsType = {
     state: RootStateType
-    addNewMessage: (text: string) => void
+    dispatch: (action: ActionTypes) => void
 }
 
 function Body (props: BodyPropsType) {
@@ -23,7 +23,7 @@ function Body (props: BodyPropsType) {
             <Route path='/settings' render={ () => <Settings /> } />
             <Route path='/posts' render={ () => <Posts /> } />
             <Route path='/music' render={ () => <Music /> } />
-            <Route path='/messages' render={ () => <PageOffMessages state={props.state} addNewMessage={props.addNewMessage}/> } />
+            <Route path='/messages' render={ () => <PageOffMessages state={props.state} dispatch={props.dispatch}/> } />
             <Route path='/images' render={ () => <Images /> } />
             <Route path='/myFriends' render={ () => <MyFriends /> } />
             <Route path='/addFriends' render={ () => <AddFriends /> } />

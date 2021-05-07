@@ -4,9 +4,10 @@ import attachmentIcon from '../../../../common/image/defoultIcons/attachmentIcon
 import emojiIcon from '../../../../common/image/defoultIcons/emojiIcon.png'
 import sendMessageIcon from '../../../../common/image/defoultIcons/sendMessageIcon.png'
 import recordIcon from '../../../../common/image/defoultIcons/recordIcon.png'
+import {ActionTypes, addNewMessageAC} from "../../../../redux/state";
 
 type AddMessageForm = {
-    addNewMessage: (text: string) => void
+    dispatch: (action: ActionTypes) => void
 }
 
 export function AddMessageForm(props: AddMessageForm) {
@@ -21,7 +22,7 @@ export function AddMessageForm(props: AddMessageForm) {
     )
 
     const addMessage = () => {   // контейнер над функцией добавления сообщений
-        props.addNewMessage(value)
+        props.dispatch(addNewMessageAC(value))
         setValue('')
     }
 

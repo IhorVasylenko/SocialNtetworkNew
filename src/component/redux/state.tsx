@@ -1,6 +1,5 @@
 import React from "react";
-import {v1} from "uuid";
-import {renderTree} from "../../render";
+import {stringify, v1} from "uuid";
 
 export const myId = '116355' // необходим для реализации логики, в дальнейшем получу с сервера
 export const newDate = `${new Date().getHours()}:${new Date().getMinutes()}` //временная заглушка для отображения даты
@@ -43,93 +42,131 @@ export type RootStateType = {
     positionsData: Array<MenuPositionType>
     dialogsData: Array<DialogItemPropsType>
 }
+export type StoreType = {
+    myState: RootStateType
+    renderTree: () => void
+    subscribe: (observer: () => void) => void
+    getState: () => RootStateType
+    dispatch: (action: ActionTypes) => void
+}
+export type ActionTypes = ReturnType<typeof addNewMessageAC> // |
 
-const myState: RootStateType = {
-    messagesData: [
-        {
-            id: v1(),
-            authorId: '1',
-            dateOffMessage: newDate,     //должно фиксироваться время отправки сообщения
-            lastMessageText: 'It is a dark time for the Rebellion. ',
-            statusOffMessage: "lookedOver",
-            order: '',
-            myId: myId
-        },
-        {
-            id: v1(),
-            authorId: '116355',
-            dateOffMessage: newDate,
-            lastMessageText: 'It is a dark time for the Rebellion. ',
-            statusOffMessage: "lookedOver",
-            order: '',
-            myId: myId
-        },
-        {
-            id: v1(),
-            authorId: '1',
-            dateOffMessage: newDate,
-            lastMessageText: 'It is a dark time for the RebellionIt is a dark time for the RebellionIt is a dark time for the Rebellion. ',
-            statusOffMessage: "lookedOver",
-            order: 'last',
-            myId: myId
-        },
-        {
-            id: v1(),
-            authorId: '116355',
-            dateOffMessage: newDate,
-            lastMessageText: 'It is a dark time for the RebellionIt is a dark time for the RebellionIt is a dark time for the Rebellion. ',
-            statusOffMessage: "lookedOver",
-            order: 'last',
-            myId: myId
+
+
+export const addNewMessageAC = (text: string) => {
+    return {
+        type: "ADD_NEW_MESSAGE",
+        text: text
+    } as const
+}
+
+export const store: StoreType = {
+    myState: {
+        messagesData: [
+            {
+                id: v1(),
+                authorId: '1',
+                dateOffMessage: newDate,     //должно фиксироваться время отправки сообщения
+                lastMessageText: 'It is a dark time for the Rebellion. ',
+                statusOffMessage: "lookedOver",
+                order: '',
+                myId: myId
+            },
+            {
+                id: v1(),
+                authorId: '116355',
+                dateOffMessage: newDate,
+                lastMessageText: 'It is a dark time for the Rebellion. ',
+                statusOffMessage: "lookedOver",
+                order: '',
+                myId: myId
+            },
+            {
+                id: v1(),
+                authorId: '1',
+                dateOffMessage: newDate,
+                lastMessageText: 'It is a dark time for the RebellionIt is a dark time for the RebellionIt is a dark time for the Rebellion. ',
+                statusOffMessage: "lookedOver",
+                order: 'last',
+                myId: myId
+            },
+            {
+                id: v1(),
+                authorId: '116355',
+                dateOffMessage: newDate,
+                lastMessageText: 'It is a dark time for the RebellionIt is a dark time for the RebellionIt is a dark time for the Rebellion. ',
+                statusOffMessage: "lookedOver",
+                order: 'last',
+                myId: myId
+            }
+        ],
+        positionsData: [
+            {id: v1(), title: 'first', active: false, path: '/profile'},
+            {id: v1(), title: 'second', active: false, path: '/profile'},
+            {id: v1(), title: 'third', active: false, path: '/profile'},
+            {id: v1(), title: 'fourth', active: false, path: '/profile'},
+            {id: v1(), title: 'fifth', active: false, path: '/profile'}
+        ],
+        dialogsData: [
+            {
+                id: v1(), onlineAuthor: false, authorName: 'Gleb',
+                messageDate: newDate, messageStatus: 'load', lastMessageAuthorName: 'Gleb:',
+                lastMessageText: 'It is a period of civil war. ',
+                unViewedMessageCounter: 1, timePassed: 3, authorAvatar: null
+            },
+            {
+                id: v1(), onlineAuthor: true, authorName: 'Marina',
+                messageDate: newDate, messageStatus: 'notDelivery', lastMessageAuthorName: 'Marina:',
+                lastMessageText: 'Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. ',
+                unViewedMessageCounter: 10, timePassed: 101, authorAvatar: null
+            },
+            {
+                id: v1(), onlineAuthor: false, authorName: 'Vlad',
+                messageDate: newDate, messageStatus: 'delivery', lastMessageAuthorName: 'You:',
+                lastMessageText: 'It is a dark time for the Rebellion. ',
+                unViewedMessageCounter: 9, timePassed: 23, authorAvatar: null
+            },
+            {
+                id: v1(), onlineAuthor: true, authorName: 'Iuliia',
+                messageDate: newDate, messageStatus: 'seen', lastMessageAuthorName: 'You:',
+                lastMessageText: 'Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. ',
+                unViewedMessageCounter: null, timePassed: 24, authorAvatar: null
+            },
+            {
+                id: v1(), onlineAuthor: null, authorName: 'Alina',
+                messageDate: newDate, messageStatus: 'lookedOver', lastMessageAuthorName: 'Alina:',
+                lastMessageText: 'It is a dark time for the Rebellion. ',
+                unViewedMessageCounter: 115, timePassed: 25, authorAvatar: null
+            }
+        ]
+    },
+    renderTree () {},
+    subscribe (observer) {
+        this.renderTree = observer
+    },
+    getState () {
+        return this.myState
+    },
+    dispatch (action) {
+        if (action.type === 'ADD_NEW_MESSAGE') {
+            const newMessage: MessagesPropsType = {
+                id: v1(),
+                authorId: '116355',
+                dateOffMessage: newDate,     //должно фиксироваться время отправки сообщения
+                lastMessageText: action.text,
+                statusOffMessage: "lookedOver",
+                order: 'last',
+                myId: myId
+            }
+            this.myState.messagesData.push(newMessage)
+            this.renderTree()
+            this.myState.messagesData[this.myState.messagesData.length - 2].order = '' // костыль, убирает хвостик у предпоследнего сообщения
         }
-    ],
-    positionsData: [
-        {id: v1(), title: 'first', active: false, path: '/profile'},
-        {id: v1(), title: 'second', active: false, path: '/profile'},
-        {id: v1(), title: 'third', active: false, path: '/profile'},
-        {id: v1(), title: 'fourth', active: false, path: '/profile'},
-        {id: v1(), title: 'fifth', active: false, path: '/profile'}
-    ],
-    dialogsData: [
-        {id: v1(), onlineAuthor: false, authorName: 'Gleb',
-            messageDate: newDate, messageStatus: 'load', lastMessageAuthorName: 'Gleb:',
-            lastMessageText: 'It is a period of civil war. ',
-            unViewedMessageCounter: 1, timePassed: 3, authorAvatar: null},
-        {id: v1(), onlineAuthor: true, authorName: 'Marina',
-            messageDate: newDate, messageStatus: 'notDelivery', lastMessageAuthorName: 'Marina:',
-            lastMessageText: 'Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. ',
-            unViewedMessageCounter: 10, timePassed: 101, authorAvatar: null},
-        {id: v1(), onlineAuthor: false, authorName: 'Vlad',
-            messageDate: newDate, messageStatus: 'delivery', lastMessageAuthorName: 'You:',
-            lastMessageText: 'It is a dark time for the Rebellion. ',
-            unViewedMessageCounter: 9, timePassed: 23, authorAvatar: null},
-        {id: v1(), onlineAuthor: true, authorName: 'Iuliia',
-            messageDate: newDate, messageStatus: 'seen', lastMessageAuthorName: 'You:',
-            lastMessageText: 'Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. ',
-            unViewedMessageCounter: null, timePassed: 24, authorAvatar: null},
-        {id: v1(), onlineAuthor: null, authorName: 'Alina',
-            messageDate: newDate, messageStatus: 'lookedOver', lastMessageAuthorName: 'Alina:',
-            lastMessageText: 'It is a dark time for the Rebellion. ',
-            unViewedMessageCounter: 115, timePassed: 25, authorAvatar: null}
-    ]
-}
-
-export const addNewMessage = (text: string) => {
-    const newMessage: MessagesPropsType = {
-        id: v1(),
-        authorId: '116355',
-        dateOffMessage: newDate,     //должно фиксироваться время отправки сообщения
-        lastMessageText: text,
-        statusOffMessage: "lookedOver",
-        order: 'last',
-        myId: myId
     }
-    myState.messagesData.push(newMessage)
-    renderTree(myState)
-    myState.messagesData[myState.messagesData.length-2].order = '' // костыль, убирает хвостик у предпоследнего сообщения
 }
 
-export default myState
+
+
 
 
 /*let x = {

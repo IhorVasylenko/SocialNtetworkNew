@@ -3,18 +3,17 @@ import './App.css';
 import Header from "./component/User/header/Header";
 import Body from "./component/User/body/Body";
 import Footer from "./component/User/footer/Footer";
-import {RootStateType} from "./component/redux/state";
+import {StoreType} from "./component/redux/state";
 
 type AppPropsType = {
-    state: RootStateType
-    addNewMessage: (text: string) => void
+    store: StoreType
 }
 
 function App(props: AppPropsType) {
   return (
     <div className="App">
       <Header />
-      <Body state={props.state} addNewMessage={props.addNewMessage}/>
+      <Body state={props.store.getState()} dispatch={props.store.dispatch.bind(props.store)}/>
       <Footer />
     </div>
   );
