@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./MessageItem.module.css";
 import {DisplayMessageStatus} from "../../../../../HOC/displayMessageStatus/DisplayMessageStatus";
-import {MessagesPropsType} from "../../../../../redux/state";
+import {MessagesPropsType} from "../../../../../redux/store";
 
 export const MyMessages = (props: MessagesPropsType) => {
     return (

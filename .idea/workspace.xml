@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1521610f-b017-4a55-97e4-655a8f96a61f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/component/redux/messagesReducer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/HOC/displayMessageStatus/DisplayMessageStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/HOC/displayMessageStatus/DisplayMessageStatus.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/User/body/Body.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/Body.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/User/body/messages/PageOffMessages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/messages/PageOffMessages.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/User/body/messages/addMessageForm/AddMessageForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/messages/addMessageForm/AddMessageForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/redux/state.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/redux/state.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/body/messages/dialogsList/DialogsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/messages/dialogsList/DialogsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/body/messages/dialogsList/dilogItem/DialogItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/messages/dialogsList/dilogItem/DialogItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/body/messages/messageSheet/MessageSheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/messages/messageSheet/MessageSheet.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/body/messages/messageSheet/messageItem/CompanionMessages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/messages/messageSheet/messageItem/CompanionMessages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/body/messages/messageSheet/messageItem/MessageItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/messages/messageSheet/messageItem/MessageItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/User/body/messages/messageSheet/messageItem/MyMessages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/User/body/messages/messageSheet/messageItem/MyMessages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/common/hamburgerMenu/HamburgerMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/common/hamburgerMenu/HamburgerMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/redux/state.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/redux/store.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/render.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -110,7 +118,10 @@
       <workItem from="1619777378685" duration="12728000" />
       <workItem from="1619867498185" duration="18427000" />
       <workItem from="1620139100347" duration="126000" />
-      <workItem from="1620200990896" duration="34160000" />
+      <workItem from="1620200990896" duration="35349000" />
+      <workItem from="1620367038730" duration="1186000" />
+      <workItem from="1620543476042" duration="1359000" />
+      <workItem from="1620555969937" duration="5442000" />
     </task>
     <task id="LOCAL-00001" summary="26.04.21 creating a message page">
       <created>1619447043673</created>
@@ -140,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620249211581</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="07.05.21 - my store">
+      <created>1620352515155</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620352515155</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +182,7 @@
     <MESSAGE value="28.04" />
     <MESSAGE value="02.05.21" />
     <MESSAGE value="06.05.21" />
-    <option name="LAST_COMMIT_MESSAGE" value="06.05.21" />
+    <MESSAGE value="07.05.21 - my store" />
+    <option name="LAST_COMMIT_MESSAGE" value="07.05.21 - my store" />
   </component>
 </project>

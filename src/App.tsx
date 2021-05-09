@@ -3,7 +3,7 @@ import './App.css';
 import Header from "./component/User/header/Header";
 import Body from "./component/User/body/Body";
 import Footer from "./component/User/footer/Footer";
-import {StoreType} from "./component/redux/state";
+import {StoreType} from "./component/redux/store";
 
 type AppPropsType = {
     store: StoreType

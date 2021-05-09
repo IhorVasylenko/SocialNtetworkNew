@@ -1,5 +1,6 @@
 import React from "react";
-import {stringify, v1} from "uuid";
+import {v1} from "uuid";
+import {addNewMessageAC, messagesReducer} from "./messagesReducer";
 
 export const myId = '116355' // необходим для реализации логики, в дальнейшем получу с сервера
 export const newDate = `${new Date().getHours()}:${new Date().getMinutes()}` //временная заглушка для отображения даты
@@ -49,16 +50,8 @@ export type StoreType = {
     getState: () => RootStateType
     dispatch: (action: ActionTypes) => void
 }
+
 export type ActionTypes = ReturnType<typeof addNewMessageAC> // |
-
-
-
-export const addNewMessageAC = (text: string) => {
-    return {
-        type: "ADD_NEW_MESSAGE",
-        text: text
-    } as const
-}
 
 export const store: StoreType = {
     myState: {
@@ -148,20 +141,7 @@ export const store: StoreType = {
         return this.myState
     },
     dispatch (action) {
-        if (action.type === 'ADD_NEW_MESSAGE') {
-            const newMessage: MessagesPropsType = {
-                id: v1(),
-                authorId: '116355',
-                dateOffMessage: newDate,     //должно фиксироваться время отправки сообщения
-                lastMessageText: action.text,
-                statusOffMessage: "lookedOver",
-                order: 'last',
-                myId: myId
-            }
-            this.myState.messagesData.push(newMessage)
-            this.renderTree()
-            this.myState.messagesData[this.myState.messagesData.length - 2].order = '' // костыль, убирает хвостик у предпоследнего сообщения
-        }
+        this.myState.messagesData = messagesReducer(this.myState.messagesData, action)
     }
 }
 

@@ -3,7 +3,7 @@ import style from './PageOffMessages.module.css'
 import MessageSheet from "./messageSheet/MessageSheet";
 import DialogsList from "./dialogsList/DialogsList";
 import {AddMessageForm} from "./addMessageForm/AddMessageForm";
-import {ActionTypes, RootStateType} from "../../../redux/state";
+import {ActionTypes, RootStateType} from "../../../redux/store";
 
 type PageOffMessagesPropsType = {
     state: RootStateType

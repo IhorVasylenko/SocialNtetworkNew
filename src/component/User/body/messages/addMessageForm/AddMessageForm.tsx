@@ -4,7 +4,8 @@ import attachmentIcon from '../../../../common/image/defoultIcons/attachmentIcon
 import emojiIcon from '../../../../common/image/defoultIcons/emojiIcon.png'
 import sendMessageIcon from '../../../../common/image/defoultIcons/sendMessageIcon.png'
 import recordIcon from '../../../../common/image/defoultIcons/recordIcon.png'
-import {ActionTypes, addNewMessageAC} from "../../../../redux/state";
+import {ActionTypes} from "../../../../redux/store";
+import {addNewMessageAC} from "../../../../redux/messagesReducer";
 
 type AddMessageForm = {
     dispatch: (action: ActionTypes) => void

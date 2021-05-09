@@ -9,7 +9,7 @@ import PageOffMessages from "./messages/PageOffMessages";
 import Images from "./images/Images";
 import MyFriends from "./friends/myFriends/MyFriends";
 import AddFriends from "./friends/addFriends/AddFriends";
-import {ActionTypes, RootStateType} from "../../redux/state";
+import {ActionTypes, RootStateType} from "../../redux/store";
 
 type BodyPropsType = {
     state: RootStateType

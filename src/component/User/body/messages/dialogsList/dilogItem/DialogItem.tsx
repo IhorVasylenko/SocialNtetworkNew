@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './DialogItem.module.css'
 import noAvatar from '../../../../../common/image/defoultIcons/noPhotoAvatar.png'
-import {DialogItemPropsType} from "../../../../../redux/state";
+import {DialogItemPropsType} from "../../../../../redux/store";
 import {DisplayMessageStatus} from "../../../../../HOC/displayMessageStatus/DisplayMessageStatus";
 import {OnlineStatus} from "../../../../../HOC/onlineStatus/OnlineStatus";
 
