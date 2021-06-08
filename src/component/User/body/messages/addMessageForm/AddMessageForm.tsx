@@ -4,28 +4,31 @@ import attachmentIcon from '../../../../common/image/defoultIcons/attachmentIcon
 import emojiIcon from '../../../../common/image/defoultIcons/emojiIcon.png'
 import sendMessageIcon from '../../../../common/image/defoultIcons/sendMessageIcon.png'
 import recordIcon from '../../../../common/image/defoultIcons/recordIcon.png'
-import {ActionTypes} from "../../../../redux/store";
 import {addNewMessageAC} from "../../../../redux/messagesReducer";
+import {Dispatch} from "redux";
+import {useDispatch} from "react-redux";
 
 type AddMessageForm = {
-    dispatch: (action: ActionTypes) => void
+
 }
 
 export function AddMessageForm(props: AddMessageForm) {
-    const [value,setValue] = useState('')
-    const [buttonState, setButtonState] = useState(sendMessageIcon) //стейт на кноку, с изначальной jsx разметкой
+    const [value,setValue] = useState('');
+    const [buttonState, setButtonState] = useState(sendMessageIcon); //стейт на кноку, с изначальной jsx разметкой
 
-    const changeValue = (e: ChangeEvent<HTMLInputElement>) => {
+
+    const dispatch: Dispatch<any> = useDispatch()
+
+    const changeValue = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setValue(e.currentTarget.value)
-    }
+    };
 
-    useEffect(() => (value.trim() !== '') ? setButtonState(sendMessageIcon) : setButtonState(recordIcon)
-    )
+    useEffect(() => (value.trim() !== '') ? setButtonState(sendMessageIcon) : setButtonState(recordIcon) )
 
     const addMessage = () => {   // контейнер над функцией добавления сообщений
-        props.dispatch(addNewMessageAC(value))
-        setValue('')
-    }
+        dispatch(addNewMessageAC(value));
+        setValue('');
+    };
 
     return (
         <div className={style.container}>
@@ -44,5 +47,5 @@ export function AddMessageForm(props: AddMessageForm) {
                 <img onClick={addMessage} src={buttonState} alt="recordIcon"/>
             </button>
         </div>
-    )
+    );
 }

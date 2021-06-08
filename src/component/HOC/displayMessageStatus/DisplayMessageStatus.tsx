@@ -3,7 +3,7 @@ import notDeliveredIcon from "../../common/image/defoultIcons/notDeliveredIcon.p
 import deliveredIcon from "../../common/image/defoultIcons/deliveredIcon.png";
 import seenIcon from "../../common/image/defoultIcons/seenIcon.png";
 import lookedOverIcon from "../../common/image/defoultIcons/lookedOverIcon.png";
-import {MessageStatusType} from "../../redux/store";
+import {MessageStatusType} from "../../../App";
 
 
 export const DisplayMessageStatus = (status: MessageStatusType) => {

@@ -1,16 +1,21 @@
 import React, {MutableRefObject, useEffect, useRef} from 'react';
 import style from './MessageSheet.module.css'
 import MessageItem from "./messageItem/MessageItem";
-import {MessagesPropsType} from "../../../../redux/store";
+import {useSelector} from "react-redux";
+import {AppRootStateType} from "../../../../redux/store";
+import {InitialMessagesStateType} from "../../../../redux/messagesReducer";
 
-function MessageSheet (props: {messagesData: MessagesPropsType[]}) {
+function MessageSheet () {
+    const messages = useSelector<AppRootStateType, InitialMessagesStateType>(state => state.messages)
+
     const divRef: MutableRefObject<null> = useRef(null);   //срабатывают все scrolls
 
     useEffect(() => {
+        // @ts-ignore
         divRef.current.scrollIntoView({ behavior: 'smooth' });
     });
 
-    const messagesList = props.messagesData.map( mi =>
+    const messagesList = messages.map( mi =>
         <MessageItem
             key={mi.id}
             id={mi.id}

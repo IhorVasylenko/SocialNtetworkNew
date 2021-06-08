@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import style from './HamburgerMenu.module.css'
 import {NavLink} from "react-router-dom";
-import {HamburgerMenuPropsType} from "../../redux/store";
+import {HamburgerMenuPropsType} from "../../../App";
 
 
 

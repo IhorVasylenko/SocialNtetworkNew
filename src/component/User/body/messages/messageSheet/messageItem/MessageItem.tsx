@@ -2,7 +2,7 @@ import React from 'react';
 import style from './MessageItem.module.css'
 import {MyMessages} from "./MyMessages";
 import {CompanionMessages} from "./CompanionMessages";
-import {MessagesPropsType} from "../../../../../redux/store";
+import {MessagesPropsType} from "../../../../../../App";
 
 
 function MessageItem(props: MessagesPropsType) {

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import style from './Body.module.css'
 import  {Route} from "react-router-dom";
 import Profile from "./profile/Profile";
@@ -9,12 +9,11 @@ import PageOffMessages from "./messages/PageOffMessages";
 import Images from "./images/Images";
 import MyFriends from "./friends/myFriends/MyFriends";
 import AddFriends from "./friends/addFriends/AddFriends";
-import {ActionTypes, RootStateType} from "../../redux/store";
+import {RootStateType} from "../../../App";
 
 type BodyPropsType = {
-    state: RootStateType
-    dispatch: (action: ActionTypes) => void
-}
+    state: RootStateType,
+};
 
 function Body (props: BodyPropsType) {
     return (
@@ -23,12 +22,12 @@ function Body (props: BodyPropsType) {
             <Route path='/settings' render={ () => <Settings /> } />
             <Route path='/posts' render={ () => <Posts /> } />
             <Route path='/music' render={ () => <Music /> } />
-            <Route path='/messages' render={ () => <PageOffMessages state={props.state} dispatch={props.dispatch}/> } />
+            <Route path='/messages' render={ () => <PageOffMessages state={props.state}/> } />
             <Route path='/images' render={ () => <Images /> } />
             <Route path='/myFriends' render={ () => <MyFriends /> } />
             <Route path='/addFriends' render={ () => <AddFriends /> } />
         </div>
-    )
-}
+    );
+};
 
-export default Body
+export default Body;

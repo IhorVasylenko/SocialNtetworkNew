@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./MessageItem.module.css";
-import {MessagesPropsType} from "../../../../../redux/store";
+import {MessagesPropsType} from "../../../../../../App";
 
 export const CompanionMessages = (props: MessagesPropsType) => {
     return (
