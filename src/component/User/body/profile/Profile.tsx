@@ -23,10 +23,10 @@ function Profile () {
                                 <img src={noAvatar} alt=""/>
                             </div>
                             <div className={style.placeHolders}>
-                                <a href='#'>news</a>
-                                <a href='#'>portfolio</a>
-                                <a href='#'>album</a>
-                                <a href='#'>frainds</a>
+                                <a href='none'>news</a>
+                                <a href='none'>portfolio</a>
+                                <a href='none'>album</a>
+                                <a href='none'>frainds</a>
                             </div>
                             <button>unfollow</button>
                         </div>
@@ -43,27 +43,27 @@ function Profile () {
                                     </div>
                                 </div>
                                 <div className={style.socialsDate}>
-                                    <a>
+                                    <a href='none'>
                                         <img src={iconFacebook} alt="iconFacebook"/>
                                         <p>https://uk-ua.facebook.com</p>
                                     </a>
-                                    <a>
+                                    <a href='none'>
                                         <img src={iconInstagram} alt="iconInstagram"/>
                                         <p>https://instagram-my.ru/</p>
                                     </a>
-                                    <a>
+                                    <a href='none'>
                                         <img src={iconPinterest} alt="iconPinterest"/>
                                         <p>https://www.pinterest.com/</p>
                                     </a>
-                                    <a>
+                                    <a href='none'>
                                         <img src={iconLinkedin} alt="iconLinkedin"/>
                                         <p>https://linkedin.com/</p>
                                     </a>
-                                    <a>
+                                    <a href='none'>
                                         <img src={iconTwitter} alt="iconTwitter"/>
                                         <p>https://twitter.com/</p>
                                     </a>
-                                    <a>
+                                    <a href='none'>
                                         <img src={iconYouTube} alt="iconYouTube"/>
                                         <p>https://www.youtube.com/</p>
                                     </a>

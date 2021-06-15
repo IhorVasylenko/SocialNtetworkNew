@@ -8,7 +8,7 @@ type PropsType = {
 }
 
 const MenuItemSubmenu = (props: PropsType) => {
-    const links = props.subMenu.map( l => <li><NavLink to={`./${l.replace(' ','')}`}>{l}</NavLink></li> )
+    const links = props.subMenu.map( l => <li key={l}><NavLink to={`./${l.replace(' ','')}`}>{l}</NavLink></li> )
 
     return (
         <div className={style.menuWrapper}>

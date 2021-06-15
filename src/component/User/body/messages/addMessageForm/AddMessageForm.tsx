@@ -8,11 +8,8 @@ import {addNewMessageAC} from "../../../../redux/messagesReducer";
 import {Dispatch} from "redux";
 import {useDispatch} from "react-redux";
 
-type AddMessageForm = {
 
-}
-
-export function AddMessageForm(props: AddMessageForm) {
+export function AddMessageForm() {
     const [value,setValue] = useState('');
     const [buttonState, setButtonState] = useState(sendMessageIcon); //стейт на кноку, с изначальной jsx разметкой
 
@@ -23,7 +20,7 @@ export function AddMessageForm(props: AddMessageForm) {
         setValue(e.currentTarget.value)
     };
 
-    useEffect(() => (value.trim() !== '') ? setButtonState(sendMessageIcon) : setButtonState(recordIcon) )
+    useEffect(() => (value.trim() !== '') ? setButtonState(sendMessageIcon) : setButtonState(recordIcon), [value] ) // зависимость добавил чтобы убрать ворнинг в консоле
 
     const addMessage = () => {   // контейнер над функцией добавления сообщений
         dispatch(addNewMessageAC(value));

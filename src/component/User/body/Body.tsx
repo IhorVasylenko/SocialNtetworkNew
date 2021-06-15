@@ -7,9 +7,8 @@ import Posts from "./posts/Posts";
 import Music from "./music/Music";
 import PageOffMessages from "./messages/PageOffMessages";
 import Images from "./images/Images";
-import MyFriends from "./friends/myFriends/MyFriends";
-import AddFriends from "./friends/addFriends/AddFriends";
 import {RootStateType} from "../../../App";
+import UserContentUsersPageContainer from "./friends/FriendsContainer";
 
 type BodyPropsType = {
     state: RootStateType,
@@ -18,16 +17,15 @@ type BodyPropsType = {
 function Body (props: BodyPropsType) {
     return (
         <div className={style.container}>
-            <Route path='/profile' render={ () => <Profile /> } />
+            <Route path='/profile/:userId?' render={ () => <Profile /> } />
             <Route path='/settings' render={ () => <Settings /> } />
             <Route path='/posts' render={ () => <Posts /> } />
             <Route path='/music' render={ () => <Music /> } />
             <Route path='/messages' render={ () => <PageOffMessages state={props.state}/> } />
             <Route path='/images' render={ () => <Images /> } />
-            <Route path='/myFriends' render={ () => <MyFriends /> } />
-            <Route path='/addFriends' render={ () => <AddFriends /> } />
+            <Route path='/addFriends' render={ () => <UserContentUsersPageContainer /> } />
         </div>
     );
-};
+}
 
 export default Body;

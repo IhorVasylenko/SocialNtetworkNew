@@ -1,8 +1,8 @@
 import {v1} from "uuid";
 import {MessagesPropsType} from "../../App";
 
-type AddNewMessageAT = ReturnType<typeof addNewMessageAC>;
-export type ActionType = AddNewMessageAT;
+type AddNewMessageType = ReturnType<typeof addNewMessageAC>;
+export type AddNewMessagesActionType = AddNewMessageType;
 
 export const myId: string = '116355'; // необходим для реализации логики, в дальнейшем получу с сервера
 export const newDate: string = `${new Date().getHours()}:${new Date().getMinutes()}`; //временная заглушка для отображения даты
@@ -47,8 +47,7 @@ let initialState = [
 ] as MessagesPropsType[];
 export type InitialMessagesStateType = typeof initialState;
 
-export const messagesReducer = (state: InitialMessagesStateType = initialState, action: ActionType): InitialMessagesStateType => {
-    debugger
+export const messagesReducer = (state: InitialMessagesStateType = initialState, action: AddNewMessagesActionType): InitialMessagesStateType => {
     switch (action.type) {
         case 'ADD_NEW_MESSAGE':
             const newMessage: MessagesPropsType = {

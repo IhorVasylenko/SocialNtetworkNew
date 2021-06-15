@@ -4,10 +4,8 @@ import loading from './loadingSVG.svg'
 
 
 
-let PreLoader = () => {
+export const PreLoader = () => {
     return <div className={s.container}>
         <img src={loading} alt={'preLoader'}/>
     </div>
 }
-
-export default PreLoader
