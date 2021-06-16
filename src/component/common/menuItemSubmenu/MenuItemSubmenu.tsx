@@ -5,10 +5,16 @@ import { NavLink } from 'react-router-dom';
 type PropsType = {
     menuName: string
     subMenu: Array<string>
-}
+};
 
-const MenuItemSubmenu = (props: PropsType) => {
-    const links = props.subMenu.map( l => <li key={l}><NavLink to={`./${l.replace(' ','')}`}>{l}</NavLink></li> )
+export const MenuItemSubmenu = (props: PropsType) => {
+    const links = props.subMenu.map(
+        l => <li key={l} >
+                <NavLink to={`./${l.replace(' ', '')}`}>
+                    {l}
+                </NavLink>
+            </li>
+        );
 
     return (
         <div className={style.menuWrapper}>
@@ -21,5 +27,3 @@ const MenuItemSubmenu = (props: PropsType) => {
         </div>
     )
 };
-
-export default MenuItemSubmenu

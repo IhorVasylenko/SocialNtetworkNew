@@ -15,8 +15,8 @@ type GetUsersType = {
     error: null | string
 };
 export const usersAPI = {
-    getUsers(currentPage = 1, pageSize = 10) {
-        return instance.get<GetUsersType>(`users?page=${currentPage}&count=${pageSize}&friend=false`, {}).then(
+    getUsers(currentPage: number, pageSize: number,) {
+        return instance.get<GetUsersType>(`users?page=${currentPage}&count=${pageSize}`, {}).then(
             response => response.data
         );
     },

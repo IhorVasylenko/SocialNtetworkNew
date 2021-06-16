@@ -4,7 +4,7 @@ import logo from '../../common/image/logoImage/logoDarkPrimery0288D1.png'
 import { NavLink } from 'react-router-dom';
 import Search from "../../common/search/Search";
 import noAvatar from '../../common/image/defoultIcons/noPhotoAvatar.png'
-import MenuItemSubmenu from "../../common/menuItemSubmenu/MenuItemSubmenu";
+import {MenuItemSubmenu} from "../../common/menuItemSubmenu/MenuItemSubmenu";
 
 function Header () {
     return (

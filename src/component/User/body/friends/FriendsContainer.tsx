@@ -11,31 +11,31 @@ import {
     getPageSize,
     getTotalUsersCount,
     getUsersData
-} from "../../../redux/addFriendsSelektors";
+} from "../../../redux/FriendsSelektors";
 import {AppRootStateType} from "../../../redux/store";
 
-type MapStateToPropsType = {
-    usersData: UsersDataType[],
-    pageSize: number,
-    totalUsersCount: number,
-    currentPage: number,
-    isFetching: boolean,
-    followingInProgress: number[],
+export type MapStateToFriendsPropsType = {
+    usersData: UsersDataType[]
+    pageSize: number
+    totalUsersCount: number
+    currentPage: number
+    isFetching: boolean
+    followingInProgress: number[]
 };
-type MapDispatchToPropsType = {
-    follow: (userId: number) => void,
-    unfollow: (userId: number) => void,
-    getUsers: (requestedPage: number, pageSize: number) => void,
+type MapDispatchToFriendsPropsType = {
+    follow: (userId: number) => void
+    unfollow: (userId: number) => void
+    getUsers: (requestedPage: number, pageSize: number,) => void
 };
-type UserContentUsersPageContainerPropsType = MapStateToPropsType & MapDispatchToPropsType;
+type UserContentUsersPageContainerPropsType = MapStateToFriendsPropsType & MapDispatchToFriendsPropsType;
 
 const UserContentUsersPageContainer = (props: UserContentUsersPageContainerPropsType) => {
     useEffect(() => {
-        props.getUsers(props.currentPage, props.pageSize)
+        props.getUsers(props.currentPage, props.pageSize,)
     }, [props.currentPage, props.pageSize]);
 
     const onPageChanged = useCallback((pageNumber: number) => {
-        props.getUsers(pageNumber, props.pageSize);
+        props.getUsers(pageNumber, props.pageSize,);
     }, [props.pageSize])
 
     return (
@@ -55,7 +55,7 @@ const UserContentUsersPageContainer = (props: UserContentUsersPageContainerProps
     )
 };
 
-const mapStateToProps = (state: AppRootStateType): MapStateToPropsType => {
+const mapStateToProps = (state: AppRootStateType): MapStateToFriendsPropsType => {
     return {
         usersData: getUsersData(state),
         pageSize: getPageSize(state),
@@ -67,7 +67,7 @@ const mapStateToProps = (state: AppRootStateType): MapStateToPropsType => {
 };
 
 export default compose<React.ComponentType>(
-    connect<MapStateToPropsType, MapDispatchToPropsType, {}, AppRootStateType>(
+    connect<MapStateToFriendsPropsType, MapDispatchToFriendsPropsType, {}, AppRootStateType>(
         mapStateToProps,
         {follow, unfollow, getUsers,},
         )) (UserContentUsersPageContainer);
