@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect} from "react";
+import React from "react";
 import {connect} from "react-redux";
 import {follow, getUsers, unfollow} from "../../../redux/usersPageReducer";
 import {UserContentAddFriends, UsersDataType} from "./Friends";
@@ -29,7 +29,35 @@ type MapDispatchToFriendsPropsType = {
 };
 type UserContentUsersPageContainerPropsType = MapStateToFriendsPropsType & MapDispatchToFriendsPropsType;
 
-const UserContentUsersPageContainer = (props: UserContentUsersPageContainerPropsType) => {
+class UserContentUsersPageContainer extends React.Component<UserContentUsersPageContainerPropsType> {
+    componentDidMount() {
+        this.props.getUsers(this.props.currentPage, this.props.pageSize,)
+    };
+
+    onPageChanged = (pageNumber: number) => {
+        this.props.getUsers(pageNumber, this.props.pageSize,);
+    }
+
+    render() {
+        return (
+            <>
+                {this.props.isFetching ? <PreLoader/> : null }
+                <UserContentAddFriends
+                    totalUsersCount={this.props.totalUsersCount}
+                    pageSize={this.props.pageSize}
+                    currentPage={this.props.currentPage}
+                    onPageChanged={this.onPageChanged}
+                    usersData={this.props.usersData}
+                    unfollow={this.props.unfollow}
+                    follow={this.props.follow}
+                    followingInProgress={this.props.followingInProgress}
+                />
+            </>
+        )
+    };
+}
+
+/*const UserContentUsersPageContainer = (props: UserContentUsersPageContainerPropsType) => {
     useEffect(() => {
         props.getUsers(props.currentPage, props.pageSize,)
     }, [props.currentPage, props.pageSize]);
@@ -53,7 +81,7 @@ const UserContentUsersPageContainer = (props: UserContentUsersPageContainerProps
             />
         </>
     )
-};
+};*/
 
 const mapStateToProps = (state: AppRootStateType): MapStateToFriendsPropsType => {
     return {
