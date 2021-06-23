@@ -2,10 +2,12 @@ import {applyMiddleware, combineReducers, createStore} from 'redux';
 import {AddNewMessagesActionType, messagesReducer} from "./messagesReducer";
 import {UsersPageActionType, usersPageReducer} from "./usersPageReducer";
 import thunkMiddleware from "redux-thunk";
+import {profilePageReducer} from "./profilePageReducer";
 
 const rootReducer = combineReducers({
    messages: messagesReducer,
    usersPage: usersPageReducer,
+   profilePage: profilePageReducer,
 });
 
 export const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));

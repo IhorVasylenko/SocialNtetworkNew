@@ -14,7 +14,7 @@ function Header () {
             </NavLink>
             <Search id={'header'} title={'Search in Go to IT'}/>
             <div className={style.submenuWrapper}>
-                <NavLink className={style.link} to={'./profile'}>
+                <NavLink className={style.link} to={'/profile'}>
                     Profile
                 </NavLink>
                 <MenuItemSubmenu menuName={'news'} subMenu={['posts','messages']} />

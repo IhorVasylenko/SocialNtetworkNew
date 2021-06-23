@@ -1,5 +1,6 @@
 import axios from "axios";
 import {UsersDataType} from "../User/body/friends/Friends";
+import {ProfileType} from "../User/body/profile/Profile";
 
 const instance = axios.create ({
     withCredentials: true,
@@ -40,17 +41,18 @@ export const followAPI = {
     },
 };
 
-/*export const profileAPI = {
-    getUserData(userId) {
-        return instance.get(`profile/` + userId, {}).then(response => response.data)
+
+export const profileAPI = {
+    getUserData(userId: number) {
+        return instance.get<ProfileType>(`profile/` + userId, {}).then(response => response.data)
     },
-    getStatus(userId) {
+    /*getStatus(userId) {
         return instance.get(`profile/status/` + userId, {}).then(response => response.data)
     },
     updateStatus(status) {
         return instance.put(`profile/status`, { status }, {}).then(response => response.data)
-    }
-};*/
+    }*/
+};
 
 /*export const authAPI = {
     me () {

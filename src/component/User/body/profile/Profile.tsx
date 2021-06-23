@@ -1,14 +1,55 @@
 import React from 'react';
-import style from './Profile.module.css'
-import iconFacebook from '../../../common/image/iconsNetworks/facebook.png'
-import iconInstagram from '../../../common/image/iconsNetworks/instagram.png'
-import iconPinterest from '../../../common/image/iconsNetworks/pinterest.png'
-import iconLinkedin from '../../../common/image/iconsNetworks/linkedin.png'
-import iconTwitter from '../../../common/image/iconsNetworks/twitter.png'
-import iconYouTube from '../../../common/image/iconsNetworks/youtube.png'
-import noAvatar from '../../../common/image/defoultIcons/noPhotoAvatar.png'
+import style from './Profile.module.css';
+import iconFacebook from '../../../common/image/iconsNetworks/facebook.png';
+import iconInstagram from '../../../common/image/iconsNetworks/instagram.png';
+import iconPinterest from '../../../common/image/iconsNetworks/pinterest.png';
+import iconLinkedin from '../../../common/image/iconsNetworks/linkedin.png';
+import iconTwitter from '../../../common/image/iconsNetworks/twitter.png';
+import iconYouTube from '../../../common/image/iconsNetworks/youtube.png';
+import noAvatar from '../../../common/image/defoultIcons/noPhotoAvatar.png';
+import {PreLoader} from "../../../common/preLoader/preLoader";
+import {follow, unfollow} from "../../../redux/usersPageReducer";
 
-function Profile () {
+
+type PhotosType = {
+    large: string | null
+    small: string | null
+}
+type ContactType = {
+    github: string
+    vk: string
+    facebook: string
+    instagram: string
+    twitter: string
+    website: string
+    youtube: string
+    mainLink: string
+}
+export type ProfileType = {
+    userId: number
+    lookingForAJob: boolean
+    lookingForAJobDescription: string
+    photos: PhotosType
+    contacts: ContactType
+    fullName: string
+}
+export type ProfilePropsType = {
+    profile: ProfileType
+    followed: boolean
+};
+
+
+export const Profile = React.memo((props: ProfilePropsType) => {
+
+    // задаем фоновое изображение общего контейнера
+    const backgroundImage  = props.profile.photos.large !== null
+        ? `url(${props.profile.photos.large})` :
+        `url(https://uapo.org.ua/wp-content/uploads/2019/07/year-end-ai.jpg)`;
+
+    if (!props.profile) {
+        return <PreLoader />
+    }
+
     return (
         <div className={style.container}>
             <div className={style.control}>
@@ -16,19 +57,26 @@ function Profile () {
             </div>
             <div className={style.content}>
                 <div className={style.wrapper}>
-                    <div className={style.backgroundImage} style={
-                        {backgroundImage: 'url(https://uapo.org.ua/wp-content/uploads/2019/07/year-end-ai.jpg)'}}>
+                    <div className={style.backgroundImage} style={{backgroundImage: backgroundImage}}>
                         <div className={style.profileMenu}>
                             <div className={style.avatarContainer}>
-                                <img src={noAvatar} alt=""/>
+                                <img src={
+                                    props.profile.photos.small != null
+                                        ? props.profile.photos.small
+                                        : noAvatar} alt=""
+                                />
                             </div>
                             <div className={style.placeHolders}>
                                 <a href='none'>news</a>
                                 <a href='none'>portfolio</a>
                                 <a href='none'>album</a>
-                                <a href='none'>frainds</a>
+                                <a href='none'>friends</a>
                             </div>
-                            <button>unfollow</button>
+                            {
+                                props.profile.userId === 12825 ? <div></div> : props.followed
+                                    ? <button onClick={() => {follow(props.profile.userId);}}>Unfollow</button>
+                                    : <button onClick={() => {unfollow(props.profile.userId);}}>Follow</button>
+                            }
                         </div>
                         <div className={style.footer}>
                             <div className={style.preferencesDate}>
@@ -43,41 +91,36 @@ function Profile () {
                                     </div>
                                 </div>
                                 <div className={style.socialsDate}>
-                                    <a href='none'>
-                                        <img src={iconFacebook} alt="iconFacebook"/>
-                                        <p>https://uk-ua.facebook.com</p>
-                                    </a>
-                                    <a href='none'>
-                                        <img src={iconInstagram} alt="iconInstagram"/>
-                                        <p>https://instagram-my.ru/</p>
-                                    </a>
-                                    <a href='none'>
-                                        <img src={iconPinterest} alt="iconPinterest"/>
-                                        <p>https://www.pinterest.com/</p>
-                                    </a>
-                                    <a href='none'>
-                                        <img src={iconLinkedin} alt="iconLinkedin"/>
-                                        <p>https://linkedin.com/</p>
-                                    </a>
-                                    <a href='none'>
-                                        <img src={iconTwitter} alt="iconTwitter"/>
-                                        <p>https://twitter.com/</p>
-                                    </a>
-                                    <a href='none'>
-                                        <img src={iconYouTube} alt="iconYouTube"/>
-                                        <p>https://www.youtube.com/</p>
-                                    </a>
+                                    <SocialContact contact={props.profile.contacts.facebook}
+                                                   address={'https://uk-ua.facebook.com'} image={iconFacebook} />
+                                    <SocialContact contact={props.profile.contacts.instagram}
+                                                   address={'https://instagram-my.ru/'} image={iconInstagram} />
+                                    <SocialContact contact={props.profile.contacts.website}
+                                                   address={'https://www.pinterest.com/'} image={iconPinterest} />
+                                    <SocialContact contact={props.profile.contacts.mainLink}
+                                                   address={'https://linkedin.com/'} image={iconLinkedin} />
+                                    <SocialContact contact={props.profile.contacts.twitter}
+                                                   address={'https://twitter.com/'} image={iconTwitter} />
+                                    <SocialContact contact={props.profile.contacts.youtube}
+                                                   address={'https://www.youtube.com/'} image={iconYouTube} />
                                 </div>
                             </div>
                             <div className={style.profileDate}>
-                                <span className={style.profileName}>Ihor Vasylenko</span>
+                                <span className={style.profileName}>
+                                    {
+                                    props.profile.fullName != null
+                                        ? props.profile.fullName
+                                        : 'noname'
+                                    }
+                                </span>
                                 <span className={style.country}>
-                            <span>Ukraine</span>
-                            <span>Kiev</span>
-                        </span>
+                                    <span>Ukraine</span>
+                                    <span>Kiev</span>
+                                </span>
                                 <span className={style.status}>
-                            Hello my friends!
-                        </span>
+                                    {/*<ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>*/}
+                                    Hello my friends!
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -85,6 +128,19 @@ function Profile () {
             </div>
         </div>
     )
-}
+});
 
-export default Profile
+
+type SocialContactPropsType = {
+    contact: string
+    address: string
+    image: string
+};
+const SocialContact = (props: SocialContactPropsType) => {
+    return (
+        <a href={props.contact != null && props.contact !== '' ? props.contact : props.address}>
+            <img src={props.image} alt="icon"/>
+            <p>{props.contact != null && props.contact !== '' ? props.contact : props.address}</p>
+        </a>
+    )
+};

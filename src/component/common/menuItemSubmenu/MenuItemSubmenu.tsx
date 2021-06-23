@@ -10,7 +10,7 @@ type PropsType = {
 export const MenuItemSubmenu = (props: PropsType) => {
     const links = props.subMenu.map(
         l => <li key={l} >
-                <NavLink to={`./${l.replace(' ', '')}`}>
+                <NavLink to={`/${l.replace(' ', '')}`}>
                     {l}
                 </NavLink>
             </li>
